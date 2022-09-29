@@ -1,0 +1,13 @@
+<section class="contact-clean">
+    <%= form_with model: @post do |form| %>
+        <h2 class="text-center">New Post</h2>
+        <div class="mb-3">
+            <%= form.text_area :body, class: 'form-control', rows: "14", placeholder: 'Message', required: true %>
+        </div>
+        <div class="mb-3">
+            <%= link_to 'Cancel', '/', class: "btn btn-primary", style: "background: var(--bs-red) !important;" %>
+            <%= form.submit 'Send', class: "btn btn-primary" %>
+        </div>
+    <% end %>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,15 @@
+<div class="container" style="padding: 0 3em;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="d-lg-flex justify-content-lg-center" style="padding: 1em;color: var(--bs-gray);"><%= params[:user_id] ? (user_signed_in? ? User.find(params[:user_id]).email : 'Anonymous') : 'News' %> Feed</h1>
+        </div>
+    </div>
+    <div class="row">
+
+        <% @posts.each do |post| %>
+            <%= render partial: 'shared/post_card', locals: {post: post} %>
+        <% end %>
+    </div>
+</div>
+<%= render partial: 'shared/pagination' %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
